@@ -1,0 +1,25 @@
+ALGORITHM algorithm1
+VAR
+   phrase:STRING[] :="je suis Boutayna LOUAHBI.";
+   i:INTEGER;
+   nbr_mots:INTEGER:=0;
+   nbr_voyelles:INTEGER:=0;
+   voyelles:STRING[]:={'a', 'e', 'i', 'o', 'u', 'y'};
+   EstUnMot : BOOLEAN := FALSE ;
+BEGIN
+    FOR i FROM 0 TO phrase.length-1 STEP 1  DO
+        IF (voyelles.includes(phrase[i])) THEN
+         nbr_voyelles=nbr_voyelles+1;
+        END_IF
+        IF (phrase[i]!==" " OR EstUnMot===FALSE ) THEN
+           EstUnMot:=TRUE;
+           nbr_mots++;
+        ELSE IF (phrase[i]===" ") THEN
+            EstUnMot:=FALSE;
+        END_IF
+    END_FOR
+    
+    Write("Le nombre de mots dans la phrase est: ",nbr_mot);
+    Write("Le nombre de voyelles dans la phrase: ",nbr_voyelles);
+
+END

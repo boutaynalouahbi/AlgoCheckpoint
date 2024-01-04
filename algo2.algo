@@ -1,0 +1,20 @@
+ALGORITHM algorithm2
+VAR
+   tab1 : ARRAY_OF INTEGER[]; 
+   tab2 : ARRAY_OF INTEGER[]; 
+   i : INTEGER; 
+   sum:INTEGER;
+BEGIN
+    sum:=0;
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+       IF (tab2.includes(tab1[i])) THEN
+       sum:=sum+tab1[i];
+       END_IF
+    END_FOR
+     FOR i FROM 0 TO tab2.length-1 STEP 1  DO
+       IF (tab1.includes(tab2[i])) THEN
+       sum:=sum+tab2[i];
+       END_IF
+    END_FOR
+    Write("la somme de tous les éléments distincts de l'ensemble 1 et 2 : ",sum);
+END
